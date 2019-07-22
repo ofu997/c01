@@ -57,5 +57,7 @@ body {
 
 #testing{
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }

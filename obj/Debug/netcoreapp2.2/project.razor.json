@@ -2968,6 +2968,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/ListResources/Index.cshtml",
+      "TargetPath": "Views/ListResources/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Shared/Error.cshtml",
       "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
