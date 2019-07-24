@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using MVCwithAuth.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MVCwithAuth.Models;
 
 namespace MVCwithAuth
 {
@@ -35,12 +36,18 @@ namespace MVCwithAuth
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<MVCwithAuthContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("MessageContext"))
+
+            );
+            
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -75,3 +82,6 @@ namespace MVCwithAuth
         }
     }
 }
+
+
+

@@ -2968,8 +2968,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/ListResources/Index.cshtml",
-      "TargetPath": "Views/ListResources/Index.cshtml",
+      "FilePath": "Views/Messages/Details.cshtml",
+      "TargetPath": "Views/Messages/Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Messages/Index.cshtml",
+      "TargetPath": "Views/Messages/Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2983,8 +2988,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Messages/Create.cshtml",
+      "TargetPath": "Views/Messages/Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Shared/_LoginPartial.cshtml",
       "TargetPath": "Views/Shared/_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Messages/Delete.cshtml",
+      "TargetPath": "Views/Messages/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2995,6 +3010,11 @@
     {
       "FilePath": "Views/Shared/_Layout.cshtml",
       "TargetPath": "Views/Shared/_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Messages/Edit.cshtml",
+      "TargetPath": "Views/Messages/Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -31,4 +31,8 @@
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/MVCwithAuth.dll
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/MVCwithAuth.pdb
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/MVCwithAuth.csproj.CopyComplete
-/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/ListResources/Index.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Messages/Index.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Messages/Create.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Messages/Delete.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Messages/Details.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Messages/Edit.g.cshtml.cs
