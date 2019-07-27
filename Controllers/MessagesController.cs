@@ -12,31 +12,39 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MVCwithAuth.Controllers
 {
-    [Authorize]
     public class MessagesController : Controller
     {
         private readonly MVCwithAuthContext _context;
-        private readonly UserManager<ApplicationUser> _userManager;
-        public MessagesController(MVCwithAuthContext context, UserManager<ApplicationUser> userManager)
+        private readonly UserManager<IdentityUser> _userManager;
+        // public MessagesController(MVCwithAuthContext context)
+        // {
+        //     _context = context;
+        // }
+
+        public MessagesController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
 
         // GET: Messages
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-        // var currentUser = await _userManager.GetUserAsync(User);
-        // if (currentUser == null) return Challenge();
-
-        // var items = await _context
-        //     .GetIncompleteItemsAsync(currentUser);
-
-        // var model = new TodoViewModel()
-        // {
-        //     Items = items
-        // };            
-            return View(await _context.Message.ToListAsync());
+           var currentUser = await _userManager.GetUserAsync(User);
+           if (currentUser == null) {
+            return Challenge();
+           }
+           else Console.WriteLine("there is a user");
+ 
+            if(currentUser.Email!="ofu997@gmail.com"){
+                Console.WriteLine("${currentUser.Email}");
+                return View(await _context.Message.ToListAsync());
+            }
+            else
+                return NotFound();
+            // return Forbid("hi");
+            // return View(await _context.Message.ToListAsync());
         }
 
         // GET: Messages/Details/5
@@ -58,6 +66,7 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Messages/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -66,6 +75,7 @@ namespace MVCwithAuth.Controllers
         // POST: Messages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Content,Time")] Message message)
@@ -80,6 +90,7 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Messages/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,6 +111,7 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,Time")] Message message)
         {
             if (id != message.Id)
@@ -131,6 +143,7 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Messages/Delete/5
+        [Authorize]    
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -149,6 +162,7 @@ namespace MVCwithAuth.Controllers
         }
 
         // POST: Messages/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -1,11 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace MVCwithAuth.Models
 {
-    public class ApplicationUser 
+    public class ApplicationUser : IdentityUser
     {
-        public virtual string Email { get; set; } // example, not necessary
+        public  string email { get; set; } // example, not necessary
     }   
 }
 

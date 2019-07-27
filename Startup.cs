@@ -50,6 +50,8 @@ namespace MVCwithAuth
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
+            // services.AddIdentity<MVCwithAuth.Models.ApplicationUser>();
+
             services.AddAuthentication()
                 .AddGoogle(options =>
                 {
