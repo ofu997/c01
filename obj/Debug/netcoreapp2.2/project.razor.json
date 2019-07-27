@@ -2978,8 +2978,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Messages/Details.cshtml",
       "TargetPath": "Views/Messages/Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3000,6 +3010,11 @@
     {
       "FilePath": "Areas/Identity/Pages/Account/Logout.cshtml",
       "TargetPath": "Areas/Identity/Pages/Account/Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Areas/Identity/Pages/Account/Manage/Index.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Manage/Index.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -7,20 +7,35 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCwithAuth.Models;
 
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+
 namespace MVCwithAuth.Controllers
 {
+    [Authorize]
     public class MessagesController : Controller
     {
         private readonly MVCwithAuthContext _context;
-
-        public MessagesController(MVCwithAuthContext context)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public MessagesController(MVCwithAuthContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Messages
         public async Task<IActionResult> Index()
         {
+        // var currentUser = await _userManager.GetUserAsync(User);
+        // if (currentUser == null) return Challenge();
+
+        // var items = await _context
+        //     .GetIncompleteItemsAsync(currentUser);
+
+        // var model = new TodoViewModel()
+        // {
+        //     Items = items
+        // };            
             return View(await _context.Message.ToListAsync());
         }
 

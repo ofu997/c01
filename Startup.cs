@@ -45,9 +45,27 @@ namespace MVCwithAuth
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+                // .AddRoles<IdentityRole>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAuthentication()
+                .AddGoogle(options =>
+                {
+                    IConfigurationSection googleAuthNSection = 
+                        Configuration.GetSection("Authentication:Google");
+                    
+                    options.ClientId = "392862400353-4c1hsnjuqpkrq7p0guks7binle6gjcln.apps.googleusercontent.com";
+                    options.ClientSecret = "h_wy967z2iYZvZ3FKY-xaulv";
+
+                });
+
+            // services.AddAuthorization(options =>
+            // {
+            //     options.AddPolicy("RequireAdministratorRole",
+            //         policy => policy.RequireRole("Administrator"));
+            // });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
