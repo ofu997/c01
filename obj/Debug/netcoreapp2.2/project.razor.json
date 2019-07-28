@@ -2978,6 +2978,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Posts/Details.cshtml",
+      "TargetPath": "Views/Posts/Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
       "TargetPath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -2988,8 +2993,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Posts/Create.cshtml",
+      "TargetPath": "Views/Posts/Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
       "TargetPath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Posts/Delete.cshtml",
+      "TargetPath": "Views/Posts/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3053,6 +3068,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Posts/Index.cshtml",
+      "TargetPath": "Views/Posts/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Shared/_Layout.cshtml",
       "TargetPath": "Views/Shared/_Layout.cshtml",
       "FileKind": "mvc"
@@ -3060,6 +3080,11 @@
     {
       "FilePath": "Views/Messages/Edit.cshtml",
       "TargetPath": "Views/Messages/Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Posts/Edit.cshtml",
+      "TargetPath": "Views/Posts/Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

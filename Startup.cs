@@ -104,4 +104,9 @@ namespace MVCwithAuth
 }
 
 
+// features: make blog model and pages
+// email ability
+// design
 
+// dotnet ef migrations add InitialCreate--context MVCwithAuth.Models.MVCwithAuthContext
+//  dotnet ef database update --context MVCwithAuth.Models.MVCwithAuthContext

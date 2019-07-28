@@ -12,5 +12,9 @@ namespace MVCwithAuth.Data
             : base(options)
         {
         }
+
+        public DbSet<MVCwithAuth.Models.Message> Message {get;set;}
+
+        public DbSet<MVCwithAuth.Models.Post> Post {get;set;}
     }
 }
