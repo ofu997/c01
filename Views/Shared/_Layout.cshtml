@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MVCwithAuth</title>
+    <!-- <title>@ViewData["Title"] - Digital Archivists</title> -->
+    <title>The Digital Curator</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -18,6 +19,19 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia
+    &display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|
+    IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|
+    IBM+Plex+Serif:400,400i|UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <!-- medieval -->
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700&display=swap" 
+    rel="stylesheet">    
+    <!-- medieval sharp -->
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- aref ruquaa -->
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa&display=swap" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -38,9 +52,9 @@
 </head>
 <body>
     <header>
-        <nav id="testing" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3" style="background-color: #e3f2fd;" >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3" style="background-color: #e3f2fd;" >
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVCwithAuth</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p class="oldFont" id="title">The Digital Curator</p></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -49,14 +63,17 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark navTitles" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li> -->
+                        <li class="nav-item"> 
+                            <a class="nav-link text-dark navTitles" asp-area="" asp-controller="Messages" asp-action="Index">Messages</a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Messages" asp-action="Index">Messages</a>
-                        </li>
+                            <a class="nav-link text-dark navTitles" asp-area="" asp-controller="Posts" asp-action="Index">Blog</a>
+                        </li>                        
                     </ul>
                 </div>
             </div>
