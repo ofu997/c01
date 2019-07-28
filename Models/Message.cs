@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCwithAuth.Models
 {
@@ -14,6 +15,7 @@ namespace MVCwithAuth.Models
         // public string user=> User.Identity; 
         public string Title { get; set; }
         // public string ListTags {get;set;}
+        [Display(Name="Hashtags")]
         public string Tags {get;set;}
         public string Content {get;set;}
 
