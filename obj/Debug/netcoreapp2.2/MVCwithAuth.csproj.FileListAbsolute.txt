@@ -1,4 +1,3 @@
-/home/oliver/Documents/projects/MVCwithAuth/bin/Debug/netcoreapp2.2/app.db
 /home/oliver/Documents/projects/MVCwithAuth/bin/Debug/netcoreapp2.2/MVCwithAuth.deps.json
 /home/oliver/Documents/projects/MVCwithAuth/bin/Debug/netcoreapp2.2/MVCwithAuth.runtimeconfig.json
 /home/oliver/Documents/projects/MVCwithAuth/bin/Debug/netcoreapp2.2/MVCwithAuth.runtimeconfig.dev.json
@@ -45,3 +44,8 @@
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Areas/Identity/Pages/Account/Manage/Index.g.cshtml.cs
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Areas/Identity/Pages/Account/Manage/_ManageNav.g.cshtml.cs
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Areas/Identity/Pages/Account/Manage/_ViewImports.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Create.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Delete.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Details.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Edit.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Index.g.cshtml.cs

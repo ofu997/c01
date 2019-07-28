@@ -39,8 +39,12 @@ namespace MVCwithAuth
 
             services.AddDbContext<MVCwithAuthContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("MessageContext"))
-
             );
+
+            services.AddDbContext<MVCwithAuthContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("PostContext"))
+            );
+
             
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
