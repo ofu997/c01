@@ -109,8 +109,17 @@ namespace MVCwithAuth
 
 
 // features: make blog model and pages
-// email ability
-// design
+// email ability: not sure if a form can do both post and email
+// update views for tags
+// design: archive *index, *create, edit, delete
 
+
+// EF. to add:
 // dotnet ef migrations add InitialCreate--context MVCwithAuth.Models.MVCwithAuthContext
 //  dotnet ef database update --context MVCwithAuth.Models.MVCwithAuthContext
+
+// EF. to delete: 
+// dotnet ef database drop, 
+// dotnet ef migrations remove
+// dotnet ef migrations add [description]
+// dotnet ef database update

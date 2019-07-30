@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MVCwithAuth.Controllers
 {
+    [Route("Archives/[action]")]
     public class MessagesController : Controller
     {
         private readonly MVCwithAuthContext _context;

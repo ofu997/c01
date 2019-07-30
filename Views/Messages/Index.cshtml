@@ -20,6 +20,7 @@
         <input type="submit" value="Filter" />
     <p>
 </form>
+
 <table class="table">
     <thead>
         <tr>
@@ -27,10 +28,13 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Tags)
+            </th>            
+            <th>
                 @Html.DisplayNameFor(model => model.Content)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Time)
+                @Html.DisplayNameFor(model => model.TimeStamp)
             </th>
             <th></th>
         </tr>
@@ -42,10 +46,13 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Tags)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Content)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Time)
+                @item.TimeStamp;
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

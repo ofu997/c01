@@ -15,11 +15,15 @@ namespace MVCwithAuth.Models
         // public string user=> User.Identity; 
         public string Title { get; set; }
         // public string ListTags {get;set;}
-        [Display(Name="Hashtags")]
-        public string Tags {get;set;}
-        public string Content {get;set;}
+        [Display(Name = "Hashtags")]
+        public string Tags { get; set; }
+        public string Content { get; set; }
 
-        // [DataType(DataType.DateTime)]
-        public string Time = DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy h:mm tt");
+        // [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
+        public DateTime TimeStamp { get; set; } 
+        public Message(){
+            TimeStamp = DateTime.Now;
+        }
     }
 }
