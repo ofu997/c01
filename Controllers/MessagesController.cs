@@ -30,23 +30,36 @@ namespace MVCwithAuth.Controllers
 
         // GET: Messages
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
             var currentUser = await _userManager.GetUserAsync(User);
+            var messages = from m in _context.Message
+                select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                messages = messages.Where(s => s.Title.Contains(searchString));
+            }
+
             if (currentUser == null) {
                 // message = "anonymous";
                 ViewData["Message"] = "anonymous";
                 // return Challenge();
-                return View(await _context.Message.ToListAsync());
+                return View(await messages.ToListAsync());
             }
             else  Console.WriteLine("there is a user");
             
             if(currentUser.Email != "ofu997@gmail.com"){
                 Console.WriteLine("${currentUser.Email}");
-                return View(await _context.Message.ToListAsync());
+                return View(await messages.ToListAsync());
             }
             else
                 return NotFound();
+        }
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
         }
 
         // GET: Messages/Details/5
