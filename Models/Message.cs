@@ -22,7 +22,8 @@ namespace MVCwithAuth.Models
         // [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         public DateTime TimeStamp { get; set; } 
-        public Message(){
+        public Message()
+        {
             TimeStamp = DateTime.Now;
         }
     }

@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+using MVCwithAuth.Models;
+
 namespace MVCwithAuth.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
@@ -19,6 +21,8 @@ namespace MVCwithAuth.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+
+        private readonly MVCwithAuthContext _context;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
@@ -67,6 +71,10 @@ namespace MVCwithAuth.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                // added
+                _context.Update(user.Email);
+                await _context.SaveChangesAsync();
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

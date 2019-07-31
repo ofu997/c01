@@ -111,8 +111,10 @@ namespace MVCwithAuth.Controllers
                 return NotFound();
             }
 
+            var currentUser = await _userManager.GetUserAsync(User);
+
             var message = await _context.Message.FindAsync(id);
-            if (message == null)
+            if (message == null || currentUser == null)
             {
                 return NotFound();
             }

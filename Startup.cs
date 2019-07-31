@@ -54,6 +54,7 @@ namespace MVCwithAuth
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             // services.AddIdentity<MVCwithAuth.Models.ApplicationUser>();
 
             services.AddAuthentication()
@@ -111,15 +112,16 @@ namespace MVCwithAuth
 // features: make blog model and pages
 // email ability: not sure if a form can do both post and email
 // update views for tags
-// design: archive *index, *create, edit, delete
-
+// update: archive *index, *create, *edit, *details, *delete
+// try to store user info in Posts
+// design home page
 
 // EF. to add:
 // dotnet ef migrations add InitialCreate--context MVCwithAuth.Models.MVCwithAuthContext
 //  dotnet ef database update --context MVCwithAuth.Models.MVCwithAuthContext
 
 // EF. to delete: 
-// dotnet ef database drop, 
-// dotnet ef migrations remove
-// dotnet ef migrations add [description]
-// dotnet ef database update
+// dotnet ef database drop --context MVCwithAuthContext
+// dotnet ef migrations remove --context MVCwithAuthContext
+// dotnet ef migrations add [description]  --context MVCwithAuthContext
+// dotnet ef database update --context MVCwithAuthContext

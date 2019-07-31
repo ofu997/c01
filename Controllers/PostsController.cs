@@ -7,15 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCwithAuth.Models;
 
+using Microsoft.AspNetCore.Identity;
+
 namespace MVCwithAuth.Controllers
 {
     public class PostsController : Controller
     {
         private readonly MVCwithAuthContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public PostsController(MVCwithAuthContext context)
+
+        public PostsController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Posts
@@ -67,13 +72,20 @@ namespace MVCwithAuth.Controllers
         // GET: Posts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+
             if (id == null)
             {
                 return NotFound();
             }
 
             var post = await _context.Post.FindAsync(id);
-            if (post == null)
+            // // working version
+            // if (post == null)
+            // {
+            //     return NotFound();
+            // }
+            if(post == null || currentUser.Id != post.OwnerId)
             {
                 return NotFound();
             }
@@ -126,6 +138,12 @@ namespace MVCwithAuth.Controllers
             var post = await _context.Post
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
+            {
+                return NotFound();
+            }
+
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (post.OwnerId != currentUser.Id)
             {
                 return NotFound();
             }
