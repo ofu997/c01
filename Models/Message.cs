@@ -19,7 +19,8 @@ namespace MVCwithAuth.Models
         public string Tags { get; set; }
         public string Content { get; set; }
 
-        // [DataType(DataType.Date)]
+        [DataType(DataType.Date)]
+        [Display(Name = "Created at")]
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         public DateTime TimeStamp { get; set; } 
         public Message()

@@ -16,6 +16,6 @@ namespace MVCwithAuth.Models
 
         public DbSet<MVCwithAuth.Models.Message> Message { get; set; }
         public DbSet<MVCwithAuth.Models.Post> Post {get;set;}
-        public DbSet<MVCwithAuth.Models.ApplicationUser> ApplicationUser {get;set;}
+        // public DbSet<MVCwithAuth.Models.ApplicationUser> ApplicationUser {get;set;}
     }
 }

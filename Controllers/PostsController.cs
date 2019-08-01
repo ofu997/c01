@@ -80,12 +80,8 @@ namespace MVCwithAuth.Controllers
             }
 
             var post = await _context.Post.FindAsync(id);
-            // // working version
-            // if (post == null)
-            // {
-            //     return NotFound();
-            // }
-            if(post == null || currentUser.Id != post.OwnerId)
+
+            if(post == null || currentUser == null)
             {
                 return NotFound();
             }
@@ -143,7 +139,7 @@ namespace MVCwithAuth.Controllers
             }
 
             var currentUser = await _userManager.GetUserAsync(User);
-            if (post.OwnerId != currentUser.Id)
+            if (currentUser == null)
             {
                 return NotFound();
             }

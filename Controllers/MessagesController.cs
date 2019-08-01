@@ -92,7 +92,7 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Content,Time")] Message message)
+        public async Task<IActionResult> Create([Bind("Id,Title,Tags,Content,Time")] Message message)
         {
             if (ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,Time")] Message message)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Tags,Content,Time")] Message message)
         {
             if (id != message.Id)
             {

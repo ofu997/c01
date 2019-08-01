@@ -114,6 +114,8 @@ namespace MVCwithAuth
 // update views for tags
 // update: archive *index, *create, *edit, *details, *delete
 // try to store user info in Posts
+// (Posts edit and delete are authorized)
+// Archive edit authorized
 // design home page
 
 // EF. to add:
@@ -125,3 +127,7 @@ namespace MVCwithAuth
 // dotnet ef migrations remove --context MVCwithAuthContext
 // dotnet ef migrations add [description]  --context MVCwithAuthContext
 // dotnet ef database update --context MVCwithAuthContext
+
+// pending changes? add and update
+
+//   <!-- @Html.DisplayFor(model => model.TimeStamp) -->
