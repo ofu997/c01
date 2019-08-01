@@ -43,7 +43,7 @@ namespace MVCwithAuth.Controllers
 
             if (currentUser == null) {
                 // message = "anonymous";
-                ViewData["Message"] = "anonymous";
+                ViewData["Message"] = "Anonymous viewing";
                 // return Challenge();
                 return View(await messages.ToListAsync());
             }
@@ -54,7 +54,7 @@ namespace MVCwithAuth.Controllers
                 return View(await messages.ToListAsync());
             }
             else
-                return NotFound();
+                return NotFound("You need to be logged in to access this page");
         }
 
         [HttpPost]
@@ -68,14 +68,14 @@ namespace MVCwithAuth.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return NotFound("this archive doesn't exist");
             }
 
             var message = await _context.Message
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (message == null)
             {
-                return NotFound();
+                return NotFound("there are no archives");
             }
 
             return View(message);
@@ -108,7 +108,7 @@ namespace MVCwithAuth.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return NotFound("this archive doesn't exist");
             }
 
             var currentUser = await _userManager.GetUserAsync(User);
@@ -116,7 +116,7 @@ namespace MVCwithAuth.Controllers
             var message = await _context.Message.FindAsync(id);
             if (message == null || currentUser == null)
             {
-                return NotFound();
+                return NotFound("you need to be logged in/there are no archives");
             }
             return View(message);
         }
@@ -161,14 +161,14 @@ namespace MVCwithAuth.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return NotFound("this archive doesn't exist");
             }
 
             var message = await _context.Message
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (message == null)
             {
-                return NotFound();
+                return NotFound("there are no archives");
             }
 
             return View(message);

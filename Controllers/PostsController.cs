@@ -34,14 +34,14 @@ namespace MVCwithAuth.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return NotFound("this post doesn't exist");
             }
 
             var post = await _context.Post
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
-                return NotFound();
+                return NotFound("this post doesn't exist");
             }
 
             return View(post);
@@ -76,14 +76,14 @@ namespace MVCwithAuth.Controllers
 
             if (id == null)
             {
-                return NotFound();
+                return NotFound("this post doesn't exist");
             }
 
             var post = await _context.Post.FindAsync(id);
 
             if(post == null || currentUser == null)
             {
-                return NotFound();
+                return NotFound("you need to be logged in/this post doesn't exist");
             }
             return View(post);
         }
@@ -128,7 +128,7 @@ namespace MVCwithAuth.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return NotFound("this post doesn't exist");
             }
 
             var post = await _context.Post
@@ -141,7 +141,7 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser == null)
             {
-                return NotFound();
+                return NotFound("you need to be logged in");
             }
 
             return View(post);
