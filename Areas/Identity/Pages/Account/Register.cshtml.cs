@@ -22,8 +22,6 @@ namespace MVCwithAuth.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
-        private readonly MVCwithAuthContext _context;
-
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
@@ -71,9 +69,6 @@ namespace MVCwithAuth.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
-                // added
-                _context.Update(user.Email);
-                await _context.SaveChangesAsync();
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)

@@ -49,3 +49,4 @@
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Details.g.cshtml.cs
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Edit.g.cshtml.cs
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Index.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/bin/Debug/netcoreapp2.2/app.db

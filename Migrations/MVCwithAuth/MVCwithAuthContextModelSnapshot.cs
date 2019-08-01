@@ -3,16 +3,14 @@ using System;
 using MVCwithAuth.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MVCwithAuth.Migrations
+namespace MVCwithAuth.Migrations.MVCwithAuth
 {
     [DbContext(typeof(MVCwithAuthContext))]
-    [Migration("20190730204058_tryingtimestamps")]
-    partial class tryingtimestamps
+    partial class MVCwithAuthContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,6 +40,8 @@ namespace MVCwithAuth.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Content");
+
+                    b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");
 

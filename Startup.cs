@@ -54,9 +54,6 @@ namespace MVCwithAuth
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            // services.AddIdentity<MVCwithAuth.Models.ApplicationUser>();
-
             services.AddAuthentication()
                 .AddGoogle(options =>
                 {
@@ -67,12 +64,6 @@ namespace MVCwithAuth
                     options.ClientSecret = "h_wy967z2iYZvZ3FKY-xaulv";
 
                 });
-
-            // services.AddAuthorization(options =>
-            // {
-            //     options.AddPolicy("RequireAdministratorRole",
-            //         policy => policy.RequireRole("Administrator"));
-            // });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -129,5 +120,7 @@ namespace MVCwithAuth
 // dotnet ef database update --context MVCwithAuthContext
 
 // pending changes? add and update
+// !!! ApplicationDbContext for identity authentication/author !!!
+// !!! MVCwithAuthContext for model tables
 
 //   <!-- @Html.DisplayFor(model => model.TimeStamp) -->

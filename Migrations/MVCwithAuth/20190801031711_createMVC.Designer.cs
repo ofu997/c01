@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MVCwithAuth.Migrations
+namespace MVCwithAuth.Migrations.MVCwithAuth
 {
     [DbContext(typeof(MVCwithAuthContext))]
-    [Migration("20190801002036_hashtag")]
-    partial class hashtag
+    [Migration("20190801031711_createMVC")]
+    partial class createMVC
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
