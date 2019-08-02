@@ -122,8 +122,9 @@ namespace MVCwithAuth
 // email ability: not sure if a form can do both post and email
 // update views for tags
 // update: archive *index, *create, *edit, *details, *delete
-// try to store user info in Posts
-// images in Posts, more fields in Messages
+// try to store user info in Messages/Posts
+// images in Posts
+// more fields in Messages (author's first name, author's last name, title, place of publication, publisher name, year and referenced pages)
 // (Posts edit and delete are authorized)(Archive edit authorized)
 // design home page
 

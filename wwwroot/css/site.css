@@ -67,12 +67,44 @@ body {
 }
 
 .navTitles{
-  font-family: 'Aref Ruqaa', serif;
   font-size: 1.4em;
   font-weight: 500;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 70px;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid black; /* The typewriter cursor */
+  white-space: nowrap; /*Keeps the content on a single line*/
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 10.0s steps(40, end),
+    blink-caret .75s steps(40, end);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #808080; }
+}
+
+
+.typewriterPadding{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.plexSerif{
+  font-family: 'IBM Plex Serif', serif;
 }
 
 /* font-family: 'IBM Plex Sans', sans-serif;
