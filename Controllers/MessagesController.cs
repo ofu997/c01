@@ -96,6 +96,7 @@ namespace MVCwithAuth.Controllers
         {
             if (ModelState.IsValid)
             {
+                message.Tags=message.Tags+" using controller to change message instance data";
                 _context.Add(message);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -114,9 +115,9 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
 
             var message = await _context.Message.FindAsync(id);
-            if (message == null || currentUser == null)
+            if (message == null)
             {
-                return NotFound("you need to be logged in/there are no archives");
+                return NotFound("you need to be logged in");
             }
             return View(message);
         }
