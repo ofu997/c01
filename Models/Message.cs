@@ -23,9 +23,12 @@ namespace MVCwithAuth.Models
         [Display(Name = "Created at")]
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         public DateTime TimeStamp { get; set; } 
+        public string userEmail {get;set;}
+        // public bool authorized {get;set;}
         public Message()
         {
             TimeStamp = DateTime.Now;
+            // authorized = false;
         }
     }
 }

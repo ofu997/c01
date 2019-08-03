@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
     [DbContext(typeof(MVCwithAuthContext))]
-    [Migration("20190801031711_createMVC")]
-    partial class createMVC
+    [Migration("20190802205012_[description]")]
+    partial class description
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,8 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                     b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("userEmail");
 
                     b.HasKey("Id");
 

@@ -17,6 +17,7 @@ namespace MVCwithAuth.Controllers
     {
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
         // public MessagesController(MVCwithAuthContext context)
         // {
         //     _context = context;
@@ -49,12 +50,13 @@ namespace MVCwithAuth.Controllers
             }
             else  Console.WriteLine("there is a user");
             
-            if(currentUser.Email != "ofu997@gmail.com"){
-                Console.WriteLine("${currentUser.Email}");
-                return View(await messages.ToListAsync());
-            }
-            else
-                return NotFound("You need to be logged in to access this page");
+            // if(currentUser.Email != "ofu997@gmail.com"){
+            //     Console.WriteLine("${currentUser.Email}");
+            //     return View(await messages.ToListAsync());
+            // }
+            // else
+            //     return NotFound("You need to be logged in to access this page");
+            return View(await messages.ToListAsync());
         }
 
         [HttpPost]
@@ -92,15 +94,18 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Tags,Content,Time")] Message message)
-        {
-            if (ModelState.IsValid)
+        public async Task<IActionResult> Create([Bind("Id,Title,Tags,Content,TimeStamp, userEmail")] Message message)
+        {   
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (ModelState.IsValid && currentUser != null)
             {
-                message.Tags=message.Tags+" using controller to change message instance data";
+                message.userEmail = currentUser.Email;
                 _context.Add(message);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+                Console.WriteLine("message.userEmail: {0}",message.userEmail);
             return View(message);
         }
 
@@ -115,10 +120,19 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
 
             var message = await _context.Message.FindAsync(id);
+                // message.userEmail is printing null, currentUser.Email prints as expected
+                Console.WriteLine("message.userEmail: {0}, currentUser.Email: {1}",message.userEmail, currentUser.Email);
             if (message == null)
             {
-                return NotFound("you need to be logged in");
+                return NotFound("archive not found");
             }
+
+            if(message.userEmail != currentUser.Email)
+            {
+                return NotFound("you are not authorized to edit this archive");
+            }
+
+
             return View(message);
         }
 

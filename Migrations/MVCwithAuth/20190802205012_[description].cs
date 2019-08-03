@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
-    public partial class createMVC : Migration
+    public partial class description : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                     Title = table.Column<string>(nullable: true),
                     Tags = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    TimeStamp = table.Column<DateTime>(nullable: false)
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    userEmail = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

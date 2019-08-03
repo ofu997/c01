@@ -29,6 +29,8 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
 
                     b.Property<string>("Title");
 
+                    b.Property<string>("userEmail");
+
                     b.HasKey("Id");
 
                     b.ToTable("Message");
