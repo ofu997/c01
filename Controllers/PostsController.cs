@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using MVCwithAuth.Models;
 
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace MVCwithAuth.Controllers
 {
@@ -24,7 +26,7 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Posts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(IFormFile file)
         {
             return View(await _context.Post.ToListAsync());
         }

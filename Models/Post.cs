@@ -15,8 +15,10 @@ namespace MVCwithAuth.Models
         // public string OwnerId {get;set;}
         public string Title { get; set; }
         public string Content { get; set; }
-
+        
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
+        [Display(Name="Created at")]
         public DateTime TimeStamp { get; set; } 
         public Post()
         {

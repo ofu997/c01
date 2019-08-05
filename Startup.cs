@@ -117,6 +117,11 @@ namespace MVCwithAuth
     }
 }
 
+// <div class="form-group">
+//     <label asp-for="File" class="control-label"></label>
+//     <input type="file" name="file" asp-for="File" class="form-control" />
+//     <span asp-validation-for="File" class="text-danger"></span>
+// </div>
 
 // features: make blog model and pages
 // email ability: not sure if a form can do both post and email

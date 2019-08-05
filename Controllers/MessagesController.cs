@@ -48,14 +48,10 @@ namespace MVCwithAuth.Controllers
                 // return Challenge();
                 return View(await messages.ToListAsync());
             }
-            else  Console.WriteLine("there is a user");
-            
-            // if(currentUser.Email != "ofu997@gmail.com"){
-            //     Console.WriteLine("${currentUser.Email}");
-            //     return View(await messages.ToListAsync());
-            // }
-            // else
-            //     return NotFound("You need to be logged in to access this page");
+                Console.WriteLine("there is a user");
+                // string [] tempEmailArray = Split("@");
+                // string userName = tempEmailArray[0];
+                // ViewData["UserName"] = userName; 
             return View(await messages.ToListAsync());
         }
 
