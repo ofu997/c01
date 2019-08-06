@@ -128,7 +128,8 @@ namespace MVCwithAuth
 // update views for tags
 // update: archive *index, *create, *edit, *details, *delete
 // try to store user info in Messages/Posts
-// images in Posts
+// images in Posts (see file uploads)
+
 // more fields in Messages (author's first name, author's last name, title, place of publication, publisher name, year and referenced pages)
 // (Posts edit and delete are authorized)(Archive: )
 // design home page

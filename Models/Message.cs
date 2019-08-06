@@ -20,10 +20,10 @@ namespace MVCwithAuth.Models
         public string Content { get; set; }
 
         [DataType(DataType.Date)]
-        [Display(Name = "Created at")]
+        [Display(Name = "Created at:")]
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         public DateTime TimeStamp { get; set; } 
-        [Display(Name="User Name")]
+        [Display(Name="Contact")]
         public string userEmail {get;set;}
         // public bool authorized {get;set;}
         public Message()
