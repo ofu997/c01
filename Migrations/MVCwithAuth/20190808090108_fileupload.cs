@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
-    public partial class description : Migration
+    public partial class fileupload : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

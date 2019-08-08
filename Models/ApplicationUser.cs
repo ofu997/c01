@@ -6,7 +6,7 @@ namespace MVCwithAuth.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public  string email { get; set; } // example, not necessary
+        public  string personalUserName { get; set; } // example, not necessary
     }   
 }
 

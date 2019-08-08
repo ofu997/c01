@@ -1,16 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Identity;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 
-namespace MVCwithAuth.Models
+namespace MVCwithAuth.ViewModels    
 {
-    public class Post
+    public class PostViewModel
     {
         public int Id { get; set; }
         // public string OwnerId {get;set;}
@@ -23,7 +17,7 @@ namespace MVCwithAuth.Models
         public DateTime TimeStamp { get; set; } 
 
         public IFormFile File {get;set;}
-        public Post()
+        public PostViewModel()
         {
             TimeStamp = DateTime.Now;
         }

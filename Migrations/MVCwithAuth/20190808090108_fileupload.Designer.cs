@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
     [DbContext(typeof(MVCwithAuthContext))]
-    [Migration("20190802205012_[description]")]
-    partial class description
+    [Migration("20190808090108_fileupload")]
+    partial class fileupload
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

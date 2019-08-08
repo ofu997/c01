@@ -13,13 +13,13 @@ namespace MVCwithAuth.Areas.Identity.Pages.Account.Manage
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#line 2 "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewImports.cshtml"
-using MVCwithAuth.Areas.Identity;
+#line 1 "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
-#line 3 "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+#line 2 "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewImports.cshtml"
+using MVCwithAuth.Areas.Identity;
 
 #line default
 #line hidden
@@ -34,7 +34,7 @@ using MVCwithAuth.Areas.Identity.Pages.Account.Manage;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fbe09a8dc22eae63227942194d8ebc442a0de303", @"/Areas/Identity/Pages/Account/Manage/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"42b7583e42945e3218c335324a97367f1630fb62", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9deadb0723110795ef880927d346312b0edc603e", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a8c5b8abc89269c14eb90e58fb9155a4c8346b93", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0cfb6e3cb89ec62fceb4c7bc3cc41aaded19aab7", @"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account_Manage_Index : global::Microsoft.AspNetCore.Mvc.RazorPages.Page

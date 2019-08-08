@@ -17,7 +17,7 @@ namespace MVCwithAuth.Controllers
     {
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        // private readonly SignInManager<IdentityUser> _signInManager;
         // public MessagesController(MVCwithAuthContext context)
         // {
         //     _context = context;
