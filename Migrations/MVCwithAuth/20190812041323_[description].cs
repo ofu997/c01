@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
-    public partial class fileupload : Migration
+    public partial class description : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,8 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    TimeStamp = table.Column<DateTime>(nullable: false)
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    FilePath = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

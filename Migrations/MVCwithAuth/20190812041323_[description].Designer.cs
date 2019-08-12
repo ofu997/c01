@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
     [DbContext(typeof(MVCwithAuthContext))]
-    [Migration("20190808090108_fileupload")]
-    partial class fileupload
+    [Migration("20190812041323_[description]")]
+    partial class description
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,6 +44,8 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Content");
+
+                    b.Property<string>("FilePath");
 
                     b.Property<DateTime>("TimeStamp");
 

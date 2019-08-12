@@ -1,4 +1,4 @@
-@model MVCwithAuth.Models.Post
+@model MVCwithAuth.ViewModels.PostViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -31,7 +31,7 @@
 </div>
 
 <hr />
-
+<!-- asp-action previously "Create" -->
 <form method="post" enctype="multipart/form-data" asp-controller="Posts" asp-action="Create">
 
     <div class="form-group">

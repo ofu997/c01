@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 
 using MVCwithAuth.ViewModels;
+// added
+using Microsoft.AspNetCore.Hosting;
 
 namespace MVCwithAuth.Controllers
 {
@@ -20,11 +22,16 @@ namespace MVCwithAuth.Controllers
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
+        // added ihostingenvironment
+        private readonly IHostingEnvironment ihe;
 
-        public PostsController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
+        // added ihostingenvironment
+        public PostsController(MVCwithAuthContext context, UserManager<IdentityUser> userManager, IHostingEnvironment ihe)
         {
             _context = context;
             _userManager = userManager;
+            // added
+            this.ihe = ihe;
         }
 
         // GET: Posts
@@ -33,8 +40,9 @@ namespace MVCwithAuth.Controllers
             return View(await _context.Post.ToListAsync());
         }
 
-        [HttpPost("Posts")]
-        public async Task<IActionResult> Post(List<IFormFile> files)
+        // Change IAR post to index
+        [HttpPost("Index")]
+        public async Task<IActionResult> Post (List<IFormFile> files)
         {
             long size = files.Sum(f => f.Length);
                             
@@ -55,10 +63,9 @@ namespace MVCwithAuth.Controllers
             }
             // process uploaded files
             // Don't rely on or trust the FileName property without validation.
-            return Ok(new { count = files.Count, size, filePaths });
+            // return Ok(new { count = files.Count, size, filePaths });
+            return RedirectToAction(nameof(Index));
         }        
-
-
 
         // GET: Posts/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -84,6 +91,7 @@ namespace MVCwithAuth.Controllers
             return View();
         }
 
+        // ORIGINAL VERSION
         // POST: Posts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -98,26 +106,48 @@ namespace MVCwithAuth.Controllers
         //         return RedirectToAction(nameof(Index));
         //     }
         //     return View(post);
-        // }
+        // } 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create ([Bind("Id, Title, Content, File")] Post model)
+        // not using Post model
+        // public async Task<IActionResult> Create ([Bind("Id, Title, Content, File")] Post model, List<IFormFile> files)
+        public async Task<IActionResult> Create (PostViewModel model)
+        
         {
             // ViewData["ReturnUrl"] = returnUrl;
             if  (ModelState.IsValid)
             {
+                using (var memoryStream = new MemoryStream())
+                {
+                    string uniqueFileName = null;
+                    if (model.File != null) 
+                    {
+                        string uploadsFolder = Path.Combine(ihe.WebRootPath, "Files");
+                        uniqueFileName = Guid.NewGuid().ToString() + "_" + model.File.FileName;
+                        string pathOfFile = Path.Combine(uploadsFolder, uniqueFileName);
+                        model.File.CopyTo(new FileStream(pathOfFile, FileMode.Create));
+                    }
+                    Post newPost = new Post
+                    {
+                        Title = model.Title,
+                        Content = model.Content,
+                        TimeStamp = model.TimeStamp,
+                        FilePath = uniqueFileName
+                    };
+                    // await model.File.CopyToAsync(memoryStream);
+                    // model.File = memoryStream.ToArray();
+                }
+
+
                 {
                     _context.Add(model);
+                    // this won't work because context can't take newPost? 
+                    // _context.Add(newPost);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
-                }                
+                };         
 
-            //     using (var memoryStream = new MemoryStream())
-            //     {
-            //         await model.File.CopyToAsync(memoryStream);
-            //         user.AvatarImage = memoryStream.ToArray();
-            //     }
             // additional logic omitted
 
             // Don't rely on or trust the model.AvatarImage.FileName property 

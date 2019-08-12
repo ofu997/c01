@@ -21,8 +21,7 @@ namespace MVCwithAuth.Models
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         [Display(Name="Created at")]
         public DateTime TimeStamp { get; set; } 
-
-        public IFormFile File {get;set;}
+        public string FilePath {get;set;}
         public Post()
         {
             TimeStamp = DateTime.Now;

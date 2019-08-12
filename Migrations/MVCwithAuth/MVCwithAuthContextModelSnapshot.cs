@@ -43,6 +43,8 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
 
                     b.Property<string>("Content");
 
+                    b.Property<string>("FilePath");
+
                     b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");

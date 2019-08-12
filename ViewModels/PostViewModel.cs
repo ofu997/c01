@@ -6,8 +6,8 @@ namespace MVCwithAuth.ViewModels
 {
     public class PostViewModel
     {
-        public int Id { get; set; }
-        // public string OwnerId {get;set;}
+        // we may not need this
+        // public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         
