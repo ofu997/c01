@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
 
 namespace MVCwithAuth.Models
 {
@@ -21,7 +20,6 @@ namespace MVCwithAuth.Models
         [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         [Display(Name="Created at")]
         public DateTime TimeStamp { get; set; } 
-        public string FilePath {get;set;}
         public Post()
         {
             TimeStamp = DateTime.Now;

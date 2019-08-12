@@ -18,9 +18,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Content)
             </th>
-            <th>
-                File
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.TimeStamp)
             </th>
@@ -28,16 +26,12 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        var filePath = "~Images/" + (item.FilePath);
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                <img class="card-img-top" src="@filePath" asp-append-version="true" />
             </td>
             <td>
                 @item.TimeStamp

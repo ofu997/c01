@@ -74,10 +74,9 @@ namespace MVCwithAuth
             if (env.IsDevelopment())
             {
                 // uncomment when testing done
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-                
-                // app.UseExceptionHandler("/Home/Error");
+                // app.UseDeveloperExceptionPage();
+                // app.UseDatabaseErrorPage();
+                app.UseExceptionHandler("/Home/Error");
 
             }
             else
@@ -131,9 +130,9 @@ namespace MVCwithAuth
 // try to store user info in Messages/Posts
 // images in Posts (see file uploads)
 
-// tues 08/06: more fields in Messages (author's first name, author's last name, title, place of publication, publisher name, year and referenced pages)
-// wednesday 08/07: authorization in general: (Posts edit and delete are authorized)(Archive: )
-// thursday 08/08: design home page
+// more fields in Messages (author's first name, author's last name, title, place of publication, publisher name, year and referenced pages)
+// (Posts edit and delete are authorized)(Archive: )
+// design home page
 
 // -----------------------------------------------------------------------------------------
 
