@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
     [DbContext(typeof(MVCwithAuthContext))]
-    [Migration("20190812210011_avoidFileUploads")]
-    partial class avoidFileUploads
+    [Migration("20190813202201_updateControllerAndViews")]
+    partial class updateControllerAndViews
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,13 +23,21 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Author");
+
+                    b.Property<string>("City");
+
                     b.Property<string>("Content");
+
+                    b.Property<string>("Publisher");
 
                     b.Property<string>("Tags");
 
                     b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("Year");
 
                     b.Property<string>("userEmail");
 

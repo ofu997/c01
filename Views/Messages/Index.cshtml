@@ -25,8 +25,23 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>            
+            <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>  
+            <th>
+                @Html.DisplayNameFor(model => model.Publisher)
+            </th>     
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>                                    
             <th>
                 @Html.DisplayNameFor(model => model.Tags)
             </th>            
@@ -45,8 +60,23 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>     
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>                        
+            <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>                        
             <td>
                 @Html.DisplayFor(modelItem => item.Tags)
             </td>

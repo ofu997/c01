@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVCwithAuth.Migrations.MVCwithAuth
 {
-    public partial class avoidFileUploads : Migration
+    public partial class updateControllerAndViews : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,11 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Author = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    Publisher = table.Column<string>(nullable: true),
+                    Year = table.Column<string>(nullable: true),
                     Tags = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
                     TimeStamp = table.Column<DateTime>(nullable: false),

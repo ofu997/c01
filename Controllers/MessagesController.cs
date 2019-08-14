@@ -17,13 +17,6 @@ namespace MVCwithAuth.Controllers
     {
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        // private readonly SignInManager<IdentityUser> _signInManager;
-        // public MessagesController(MVCwithAuthContext context)
-        // {
-        //     _context = context;
-        // }
-
-
         public MessagesController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
@@ -42,16 +35,12 @@ namespace MVCwithAuth.Controllers
                 messages = messages.Where(s => s.Title.Contains(searchString));
             }
 
-            if (currentUser == null) {
-                // message = "anonymous";
+            if (currentUser == null) 
+            {
                 ViewData["Message"] = "Anonymous viewing";
-                // return Challenge();
                 return View(await messages.ToListAsync());
             }
                 Console.WriteLine("there is a user");
-                // string [] tempEmailArray = Split("@");
-                // string userName = tempEmailArray[0];
-                // ViewData["UserName"] = userName; 
             return View(await messages.ToListAsync());
         }
 
@@ -90,7 +79,7 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Tags,Content,TimeStamp, userEmail")] Message message)
+        public async Task<IActionResult> Create([Bind("Id,Author,Title,City,Publisher,Year,Tags,Content,TimeStamp,userEmail")] Message message)
         {   
             var currentUser = await _userManager.GetUserAsync(User);
 
@@ -116,7 +105,6 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
 
             var message = await _context.Message.FindAsync(id);
-                // message.userEmail is printing null, currentUser.Email prints as expected
                 Console.WriteLine("message.userEmail: {0}, currentUser.Email: {1}",message.userEmail, currentUser.Email);
             if (message == null)
             {
@@ -125,9 +113,9 @@ namespace MVCwithAuth.Controllers
 
             if(message.userEmail != currentUser.Email)
             {
+                Console.WriteLine("message.userEmail: {0}, currentUser.Email: {1}", message.userEmail, currentUser.Email);
                 return NotFound("you are not authorized to edit this archive");
             }
-
 
             return View(message);
         }
@@ -137,7 +125,7 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Tags,Content,Time")] Message message)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Author,Title,City,Publisher,Year,Tags,Content,TimeStamp,userEmail")] Message message)
         {
             if (id != message.Id)
             {

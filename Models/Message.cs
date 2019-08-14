@@ -9,27 +9,28 @@ namespace MVCwithAuth.Models
 {
     public class Message
     {
-        // var user=await GetCurrentUserAsync();
-        // private readonly  UserManager<IdentityUser> _userManager;
+    [Display(Name="")]
         public int Id { get; set; }
-        // public string user=> User.Identity; 
+    [Display(Name="Author(s)")]
+        public string Author {get;set;}
+    [Display(Name="Title of work")]
         public string Title { get; set; }
-        // public string ListTags {get;set;}
-        [Display(Name = "Hashtags")]
+        public string City {get;set;}
+        public string Publisher {get;set;}
+        public string Year {get;set;}
+    [Display(Name = "Hashtags")]
         public string Tags { get; set; }
+    [Display(Name="Description")]
         public string Content { get; set; }
-
-        [DataType(DataType.Date)]
-        [Display(Name = "Created at:")]
-        [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
+    [DataType(DataType.Date)]
+    [Display(Name = "Created at:")]
+    [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
         public DateTime TimeStamp { get; set; } 
-        [Display(Name="Contact")]
+    [Display(Name="Contact")]
         public string userEmail {get;set;}
-        // public bool authorized {get;set;}
-        public Message()
-        {
-            TimeStamp = DateTime.Now;
-            // authorized = false;
-        }
+            public Message()
+            {
+                TimeStamp = DateTime.Now;
+            }
     }
 }

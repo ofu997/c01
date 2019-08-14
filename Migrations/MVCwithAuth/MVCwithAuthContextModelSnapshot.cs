@@ -21,13 +21,21 @@ namespace MVCwithAuth.Migrations.MVCwithAuth
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Author");
+
+                    b.Property<string>("City");
+
                     b.Property<string>("Content");
+
+                    b.Property<string>("Publisher");
 
                     b.Property<string>("Tags");
 
                     b.Property<DateTime>("TimeStamp");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("Year");
 
                     b.Property<string>("userEmail");
 
