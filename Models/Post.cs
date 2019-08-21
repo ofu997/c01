@@ -16,13 +16,15 @@ namespace MVCwithAuth.Models
         public string Title { get; set; }
         public string Content { get; set; }
         
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
-        [Display(Name="Created at")]
+    [DataType(DataType.Date)]
+    [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
+    [Display(Name="Created at")]
         public DateTime TimeStamp { get; set; } 
-        public Post()
-        {
-            TimeStamp = DateTime.Now;
-        }
+    [Display(Name="Contact")]
+        public string userEmail {get;set;}
+            public Post()
+            {
+                TimeStamp = DateTime.Now;
+            }
     }
 }

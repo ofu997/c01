@@ -17,6 +17,7 @@ namespace MVCwithAuth.Controllers
     {
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        public List<String> AdminEmails = new List<String>{"nellstrand@luc.edu", "nathanellstrand@gmail.com", "ofu997@gmail.com"};
         public MessagesController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
@@ -24,7 +25,6 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Messages
-        [AllowAnonymous]
         public async Task<IActionResult> Index(string searchString)
         {
             var currentUser = await _userManager.GetUserAsync(User);
@@ -69,8 +69,15 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Messages/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return NotFound("You need to be logged in");
+            }
+
             return View();
         }
 
@@ -90,7 +97,15 @@ namespace MVCwithAuth.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-                Console.WriteLine("message.userEmail: {0}",message.userEmail);
+            else if (ModelState.IsValid && currentUser == null)
+            {
+                return NotFound("You need to be logged in");
+            }
+            else if (!ModelState.IsValid)
+            {
+                return NotFound("Submission error");
+            }
+            
             return View(message);
         }
 
@@ -99,7 +114,7 @@ namespace MVCwithAuth.Controllers
         {
             if (id == null)
             {
-                return NotFound("this archive doesn't exist");
+                return NotFound("this identification number for this archive doesn't exist");
             }
 
             var currentUser = await _userManager.GetUserAsync(User);
@@ -110,11 +125,14 @@ namespace MVCwithAuth.Controllers
             {
                 return NotFound("archive not found");
             }
-
-            if(message.userEmail != currentUser.Email)
+            if (currentUser.Email == null)
+            {
+                return NotFound("You need to be logged in to edit archives");
+            }
+            if(currentUser.Email != message.userEmail && AdminEmails.Contains(currentUser.Email) == false)
             {
                 Console.WriteLine("message.userEmail: {0}, currentUser.Email: {1}", message.userEmail, currentUser.Email);
-                return NotFound("you are not authorized to edit this archive");
+                return NotFound("Admin only: you are not authorized to edit this archive");
             }
 
             return View(message);
@@ -167,7 +185,17 @@ namespace MVCwithAuth.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (message == null)
             {
-                return NotFound("there are no archives");
+                return NotFound("there is no archive");
+            }
+
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return NotFound("You need to be logged in");
+            }
+            if (currentUser.Email != message.userEmail && AdminEmails.Contains(currentUser.Email)==false)
+            {
+                return NotFound("You are not authorized to delete this source");
             }
 
             return View(message);

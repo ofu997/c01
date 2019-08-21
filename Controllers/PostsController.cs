@@ -17,22 +17,24 @@ namespace MVCwithAuth.Controllers
     {
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-
-        // added ihostingenvironment
-        // private readonly IHostingEnvironment ihe;
-
-        // added ihostingenvironment
+        public List<String> AdminEmails = new List<String>{"nellstrand@luc.edu", "nathanellstrand@gmail.com", "ofu997@gmail.com"};
         public PostsController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-            // added
-            // this.ihe = ihe;
         }
 
         // GET: Posts
         public async Task<IActionResult> Index(IFormFile file)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null) 
+            {
+                ViewData["Message"] = "Anonymous viewing";
+                return View(await _context.Post.ToListAsync());
+            }
+                Console.WriteLine("there is a user");            
             return View(await _context.Post.ToListAsync());
         }
 
@@ -55,44 +57,73 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Posts/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return NotFound("You need to be logged in");
+            }
+
             return View();
         }
 
-        // ORIGINAL VERSION
         // POST: Posts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Content")] Post post)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content,TimeStamp,userEmail")] Post post)
         {
-            if (ModelState.IsValid)
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (ModelState.IsValid && currentUser != null)
             {
+                post.userEmail = currentUser.Email;
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            else if (ModelState.IsValid && currentUser == null)
+            {
+                return NotFound("You need to be logged in");
+            }
+            else if (!ModelState.IsValid)
+            {
+                return NotFound("Submission error");
+            }
+                Console.WriteLine("Post Create: currentUser.Email: {0}. post.userEmail: {1}", currentUser.Email, post.userEmail);
+
             return View(post);
         }
 
         // GET: Posts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            var currentUser = await _userManager.GetUserAsync(User);
-
             if (id == null)
             {
                 return NotFound("this post doesn't exist");
             }
 
-            var post = await _context.Post.FindAsync(id);
+            var currentUser = await _userManager.GetUserAsync(User);
 
-            if(post == null || currentUser == null)
+            var post = await _context.Post.FindAsync(id);
+                Console.WriteLine("post.userEmail: {0}, currentUser.Email: {1}", post.userEmail, currentUser.Email);
+            if(post == null)
             {
-                return NotFound("you need to be logged in/this post doesn't exist");
+                return NotFound("This post doesn't exist");
             }
+            if (currentUser.Email == null)
+            {
+                return NotFound("You need to be logged in to edit posts");
+            }
+            if (post.userEmail != currentUser.Email && AdminEmails.Contains(currentUser.Email) == false)
+            {
+                Console.WriteLine("post.userEmail: {0}, currentUser.Email: {1}", post.userEmail, currentUser.Email);
+                return NotFound("You are not authorized to edit this post"); 
+            }
+
             return View(post);
         }
 
@@ -101,7 +132,7 @@ namespace MVCwithAuth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content")] Post post)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,TimeStamp,userEmail")] Post post)
         {
             if (id != post.Id)
             {
@@ -143,13 +174,18 @@ namespace MVCwithAuth.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
-                return NotFound();
+                return NotFound("there is no post");
             }
 
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser == null)
             {
                 return NotFound("you need to be logged in");
+            }
+            if (currentUser.Email != post.userEmail && AdminEmails.Contains(currentUser.Email) == false)
+            {
+                Console.WriteLine("currentUser.Email: {0}. post.userEmail: {1}", currentUser.Email, post.userEmail);
+                return NotFound("You are not authorized to delete this post");
             }
 
             return View(post);

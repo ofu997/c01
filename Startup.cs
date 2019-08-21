@@ -74,9 +74,9 @@ namespace MVCwithAuth
             if (env.IsDevelopment())
             {
                 // uncomment when testing done
-                // app.UseDeveloperExceptionPage();
-                // app.UseDatabaseErrorPage();
-                app.UseExceptionHandler("/Home/Error");
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                // app.UseExceptionHandler("/Home/Error");
 
             }
             else
@@ -117,37 +117,3 @@ namespace MVCwithAuth
     }
 }
 
-// <div class="form-group">
-//     <label asp-for="File" class="control-label"></label>
-//     <input type="file" name="file" asp-for="File" class="form-control" />
-//     <span asp-validation-for="File" class="text-danger"></span>
-// </div>
-
-// features: make blog model and pages
-// email ability: not sure if a form can do both post and email
-// update views for tags
-// update: archive *index, *create, *edit, *details, *delete
-// try to store user info in Messages/Posts
-// images in Posts (see file uploads)
-
-// more fields in Messages (author's first name, author's last name, title, place of publication, publisher name, year and referenced pages)
-// (Posts edit and delete are authorized)(Archive: )
-// design home page
-
-// -----------------------------------------------------------------------------------------
-
-// EF. to add:
-// dotnet ef migrations add InitialCreate--context MVCwithAuth.Models.MVCwithAuthContext
-//  dotnet ef database update --context MVCwithAuth.Models.MVCwithAuthContext
-
-// EF. to delete: 
-// dotnet ef database drop --context MVCwithAuthContext
-// dotnet ef migrations remove --context MVCwithAuthContext
-// dotnet ef migrations add [description]  --context MVCwithAuthContext
-// dotnet ef database update --context MVCwithAuthContext
-
-// pending changes? add and update
-// !!! ApplicationDbContext for identity authentication/author !!!
-// !!! MVCwithAuthContext for model tables
-
-//   <!-- @Html.DisplayFor(model => model.TimeStamp) -->
