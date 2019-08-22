@@ -120,12 +120,13 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
 
             var message = await _context.Message.FindAsync(id);
-                Console.WriteLine("message.userEmail: {0}, currentUser.Email: {1}",message.userEmail, currentUser.Email);
+                // Console.WriteLine("message.userEmail: {0}, currentUser.Email: {1}",message.userEmail, currentUser.Email);
             if (message == null)
             {
                 return NotFound("archive not found");
             }
-            if (currentUser.Email == null)
+            // change currentUser.Email to currentUser
+            if (currentUser == null)
             {
                 return NotFound("You need to be logged in to edit archives");
             }
@@ -191,7 +192,7 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser == null)
             {
-                return NotFound("You need to be logged in");
+                return NotFound("You need to be logged in to delete this archive");
             }
             if (currentUser.Email != message.userEmail && AdminEmails.Contains(currentUser.Email)==false)
             {

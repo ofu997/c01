@@ -11,20 +11,20 @@ namespace MVCwithAuth.Models
 {
     public class Post
     {
-        public int Id { get; set; }
-        // public string OwnerId {get;set;}
-        public string Title { get; set; }
-        public string Content { get; set; }
-        
-    [DataType(DataType.Date)]
-    [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
-    [Display(Name="Created at")]
-        public DateTime TimeStamp { get; set; } 
-    [Display(Name="Contact")]
-        public string userEmail {get;set;}
-            public Post()
-            {
-                TimeStamp = DateTime.Now;
-            }
+            public int Id { get; set; }
+            // public string OwnerId {get;set;}
+            public string Title { get; set; }
+            public string Content { get; set; }
+            
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
+        [Display(Name="Created at")]
+            public DateTime TimeStamp { get; set; } 
+        [Display(Name="Contact")]
+            public string userEmail {get;set;}
+                public Post()
+                {
+                    TimeStamp = DateTime.Now;
+                }
     }
 }

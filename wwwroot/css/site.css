@@ -111,6 +111,11 @@ body {
   font-family: "IBM Plex Mono", italic;
 }
 
+.hideThis{
+  display: none;
+  visibility: hidden;
+}
+
 /* font-family: 'IBM Plex Sans', sans-serif;
 font-family: 'IBM Plex Sans Condensed', sans-serif;
 font-family: 'IBM Plex Serif', serif;

@@ -109,12 +109,13 @@ namespace MVCwithAuth.Controllers
             var currentUser = await _userManager.GetUserAsync(User);
 
             var post = await _context.Post.FindAsync(id);
-                Console.WriteLine("post.userEmail: {0}, currentUser.Email: {1}", post.userEmail, currentUser.Email);
+                // Console.WriteLine("post.userEmail: {0}, currentUser.Email: {1}", post.userEmail, currentUser.Email);
             if(post == null)
             {
                 return NotFound("This post doesn't exist");
             }
-            if (currentUser.Email == null)
+            // change currentUser.email to currentuser
+            if (currentUser == null)
             {
                 return NotFound("You need to be logged in to edit posts");
             }
