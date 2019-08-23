@@ -36,7 +36,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Content)
+                @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
             </td>
             <td>
                 @item.TimeStamp
@@ -54,3 +54,18 @@
 }
     </tbody>
 </table>
+
+@foreach(var item in Model){
+    <div class="container">
+        <div class="row">
+            <span class="postTitle">
+                @Html.DisplayFor(modelItem => item.Title)
+            </span>
+        </div>
+        <div class="row">
+            @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
+        </div>
+    </div>
+    <hr id="hrPost">
+    <div class="postBorder"></div>
+}

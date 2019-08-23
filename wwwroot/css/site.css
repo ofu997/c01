@@ -179,6 +179,34 @@ body {
 .homePage{
   padding-top: 15%;
 }
+
+.contentCreateHeight{
+  line-height: 900%;
+  display: inline-block;
+  padding: 250px 10px;
+}
+
+textarea{
+  white-space: pre-wrap;
+}
+
+.postTitle{
+  font-size: 3em;
+  font-style: bold;
+}
+
+#hrPost{
+  border: 10px tan;
+  border-radius: 5px;
+}
+
+.postBorder{
+  width: 80%;
+  height: 10px;
+  background: tan;
+  border-radius: 5px;
+  margin: 10% 0%;
+}
 /* font-family: 'IBM Plex Sans', sans-serif;
 font-family: 'IBM Plex Sans Condensed', sans-serif;
 font-family: 'IBM Plex Serif', serif;
