@@ -13,6 +13,12 @@ html {
   font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
 }
+
+/* html {
+  font-size: 14px;
+  font-family: 'IBM Plex Serif', serif;  
+} */
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -195,19 +201,69 @@ textarea{
   font-style: bold;
 }
 
-#hrPost{
-  border: 10px tan;
-  border-radius: 5px;
-}
-
 .postBorder{
   width: 80%;
   height: 10px;
   background: tan;
-  border-radius: 5px;
+  border-radius: 5%;
   margin: 10% 0%;
 }
-/* font-family: 'IBM Plex Sans', sans-serif;
+
+.itemsBackground{
+  /* padding: 20% 20%; */
+  background: #F4F1E9;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.itemsInContainer{
+  padding: 20px;
+}
+
+.separatorIndexMessage{
+  height: 55px;
+}
+
+table thead{
+  border: none;
+}
+
+table {
+  /* table-layout:fixed; */
+  width:100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  display: block;
+} 
+
+/*
+form {
+  width: 100%;
+}
+
+#thmid{
+  width: 6%;
+}
+
+#thmauthor, #thmtags, #thmtimestamp,#thmemail,#thmcity{
+  width: 8%;
+}
+
+#thmtitle, #thmpub, #thmcontrols{
+  width:10%;
+}
+
+#thmyear{
+  width:6%;
+}
+
+#thmcontent{
+  width: 18%;
+}  */
+
+/* 
+font-family: 'IBM Plex Sans', sans-serif;
 font-family: 'IBM Plex Sans Condensed', sans-serif;
 font-family: 'IBM Plex Serif', serif;
-font-family: 'IBM Plex Mono', monospace; */
+font-family: 'IBM Plex Mono', monospace; 
+*/

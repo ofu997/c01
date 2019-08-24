@@ -1,71 +1,82 @@
 @model IEnumerable<MVCwithAuth.Models.Post>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<span class="plexSerif">
+    @{
+        ViewData["Title"] = "Index";
+    }
 
-<h1>Index</h1>
+    <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.TimeStamp)
-            </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.userEmail)
-            </th>            
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
+                <th>
+                    @Html.DisplayNameFor(model => model.userEmail)
+                </th>            
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
+                </td>
+                <td>
+                    @item.TimeStamp
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userEmail)
+                </td>            
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+    @foreach(var item in Model){
+        <div class="container">
+
+            <div class="row">
+                <span class="postTitle">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </span>
+            </div>
+
+            <div class="row">
                 @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
-            </td>
-            <td>
-                @item.TimeStamp
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.userEmail)
-            </td>            
+            </div>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <div class="row">
+                <!-- time and contact -->
+            </div>
 
-@foreach(var item in Model){
-    <div class="container">
-        <div class="row">
-            <span class="postTitle">
-                @Html.DisplayFor(modelItem => item.Title)
-            </span>
+            <div class="row">
+                <!-- edit details delete -->
+            </div>
         </div>
-        <div class="row">
-            @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
-        </div>
-    </div>
-    <hr id="hrPost">
-    <div class="postBorder"></div>
-}
+        <div class="postBorder"></div>
+    }
+</span>
