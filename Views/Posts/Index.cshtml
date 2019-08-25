@@ -10,7 +10,9 @@
     <p>
         <a asp-action="Create">Create New</a>
     </p>
-    <table class="table">
+
+    
+    <!-- <table class="table">
         <thead>
             <tr>
                 <th>
@@ -54,10 +56,10 @@
             </tr>
     }
         </tbody>
-    </table>
+    </table> -->
 
     @foreach(var item in Model){
-        <div class="container">
+        <div class="container postIndexContainer itemsBackground">
 
             <div class="row">
                 <span class="postTitle">
@@ -65,18 +67,31 @@
                 </span>
             </div>
 
-            <div class="row">
+            <div class="row rowPostContent">
                 @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
             </div>
 
-            <div class="row">
-                <!-- time and contact -->
+            <div class="row postTimeAndLinks">
+
+                <div class="alignLeft">
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                    @item.TimeStamp
+                </div>
+
+                <div class="alignCenter">
+                    <p>Contact: @item.userEmail</p>
+                </div>
+
+                <div class="alignRight">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit|</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details|</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+
             </div>
 
-            <div class="row">
-                <!-- edit details delete -->
-            </div>
         </div>
+        
         <div class="postBorder"></div>
     }
 </span>

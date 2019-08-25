@@ -1,111 +1,115 @@
 @model IEnumerable<MVCwithAuth.Models.Message>
 
-@{
-    ViewData["Title"] = "IndexViewData";
-}
+<div class="plexSerif">
+    @{
+        ViewData["Title"] = "IndexViewData";
+    }
 
-<h1>Index</h1>
+    <h1>Index</h1>
 
-<h2>
-    @ViewData["Message"]
-</h2>
+    <h2>
+        @ViewData["Message"]
+    </h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
-<form asp-controller="Messages" asp-action="Index" method="get">
     <p>
-        Hashtag or search term: <input type="text" name="SearchString">
-        <input type="submit" value="Filter" />
-    <p>
-</form>
+        <a asp-action="Create">Create New</a>
+    </p>
 
-<div class="separatorIndexMessage">
-</div>
+    <form asp-controller="Messages" asp-action="Index" method="get">
+        <p>
+            Hashtag or search term: <input type="text" name="SearchString">
+            <input type="submit" value="Filter" />
+        <p>
+    </form>
 
-<div class="container-fluid">
-    <div class="itemsBackground">
-    
-                <table class="table itemsInContainer">
-                    <thead>
-                        <tr>
-                            <th id="thmid">
-                                @Html.DisplayNameFor(model => model.Id)
-                            </th>
-                            <th id="thmauthor">
-                                @Html.DisplayNameFor(model => model.Author)
-                            </th>            
-                            <th id="thmtitle">
-                                @Html.DisplayNameFor(model => model.Title)
-                            </th>
-                            <th id="thmcity">
-                                @Html.DisplayNameFor(model => model.City)
-                            </th>  
-                            <th id="thmpub">
-                                @Html.DisplayNameFor(model => model.Publisher)
-                            </th>     
-                            <th id="thmyear">
-                                @Html.DisplayNameFor(model => model.Year)
-                            </th>                                    
-                            <th id="thmtags">
-                                @Html.DisplayNameFor(model => model.Tags)
-                            </th>            
-                            <th id="thmcontent">
-                                @Html.DisplayNameFor(model => model.Content)
-                            </th>
-                            <th id="thmtimestamp">
-                                @Html.DisplayNameFor(model => model.TimeStamp)
-                            </th>
-                            <th id="thmuseremail">
-                                @Html.DisplayNameFor(model=> model.userEmail)
-                            </th>
-                            <th id="thmcontrols">
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var item in Model) {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Id)
-                            </td>     
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Author)
-                            </td>                        
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.City)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Publisher)
-                            </td> 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Year)
-                            </td>                        
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Tags)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Content)
-                            </td>
-                            <td>
-                                @item.TimeStamp
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.userEmail)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                    </tbody>
-                </table>
-
+    <div class="separatorIndexMessage">
     </div>
-<div class="container">
+
+    <div class="container-fluid">
+        <div class="itemsBackground">
+        
+                    <table class="table itemsInContainer">
+                        <thead>
+                            <tr>
+                                <th id="thmid">
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th id="thmauthor">
+                                    @Html.DisplayNameFor(model => model.Author)
+                                </th>            
+                                <th id="thmtitle">
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th id="thmcity">
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>  
+                                <th id="thmpub">
+                                    @Html.DisplayNameFor(model => model.Publisher)
+                                </th>     
+                                <th id="thmyear">
+                                    @Html.DisplayNameFor(model => model.Year)
+                                </th>                                    
+                                <th id="thmtags">
+                                    @Html.DisplayNameFor(model => model.Tags)
+                                </th>            
+                                <th id="thmcontent">
+                                    @Html.DisplayNameFor(model => model.Content)
+                                </th>
+                                <th id="thmtimestamp">
+                                    @Html.DisplayNameFor(model => model.TimeStamp)
+                                </th>
+                                <th id="thmuseremail">
+                                    @Html.DisplayNameFor(model=> model.userEmail)
+                                </th>
+                                <th id="thmcontrols">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model) {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>     
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Author)
+                                </td>                        
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Publisher)
+                                </td> 
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Year)
+                                </td>                        
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Tags)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Content)
+                                </td>
+                                <td>
+                                    @item.TimeStamp
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.userEmail)
+                                </td>
+                                <td class="indexMessagesLinks">
+                                    
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit|</a>
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details|</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+
+        </div>
+    <div class="container">
+</div>

@@ -202,22 +202,33 @@ textarea{
 }
 
 .postBorder{
-  width: 80%;
-  height: 10px;
+  width: 100%;
+  height: 5px;
   background: tan;
-  border-radius: 5%;
-  margin: 10% 0%;
+  /* border-radius: 50% 50%; */
+  margin: 5% 0%;
+  border: 1px tan;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
 
 .itemsBackground{
   /* padding: 20% 20%; */
-  background: #F4F1E9;
+  /* background: #F4F1E9; lightgrey*/
+  /* background: #fbf5dc; tan color*/
+  background: #fbf5ba;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #Fbf5ba, #Fefdf6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #Fbf5ba, #Fefdf6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  
   border-radius: 20px;
   width: 100%;
 }
 
 .itemsInContainer{
   padding: 20px;
+  /* margin: 30px; */
 }
 
 .separatorIndexMessage{
@@ -228,14 +239,90 @@ table thead{
   border: none;
 }
 
+/* table-layout fixed, thmcontent 18% */
+
 table {
-  /* table-layout:fixed; */
+  table-layout:fixed; 
   width:100%;
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
   display: block;
 } 
 
+/* display and width -> min-width */
+/* #thmcontent{
+  display: flex;
+  min-width: 18%;
+} */
+
+.postIndexContainer{
+  width:100%;
+  padding:0px 40px;
+}
+
+.postContainer{
+  width:100%;
+  padding:20px 40px;
+}
+
+.rowPostContent{
+  width:100%;
+}
+
+.postTimeAndLinks{
+  margin-top: 5%;
+  width: 100%;
+  display: inline-block;
+}
+
+.alignLeft{
+  /* align-items: left; */
+  float: left;
+  width:33%;
+  /* display: flex; justify-content: flex-start; */
+}
+
+.alignCenter{
+  /* float: center;*/
+  width: 33%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+
+.alignRight{
+  /* display: flex; justify-content: flex-end */
+  float: right;
+  width: 25%;
+}
+
+input [type="submit"]{
+  font-family: 'UnifrakturCook', cursive;
+}
+
+button [type="submit"]{
+  font-family: 'UnifrakturCook', cursive;
+}
+
+.inlineLinks{
+  display: inline-block;
+  width: 100%;
+}
+
+a:link{
+  font-family: 'UnifrakturCook', cursive;
+  font-stretch: semi-expanded;
+}
+
+.indexMessagesLinks{
+  display:inline-block;
+}
+
+.borderLink{
+  border: 1px tan;
+  border-radius: 3px;
+}
 /*
 form {
   width: 100%;
