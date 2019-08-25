@@ -50,13 +50,22 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         />
     </environment>
+    <!-- <style>
+        .plainLink{
+            font-stretch: normal !important;
+            background-color: none !important;
+            border: none !important;
+            padding:0px !important;
+            margin:0px !important;
+        }
+    </style> -->
     <link rel="stylesheet" href="~/css/site.css" />
     <!-- <link rel="stylesheet" href="wwwroot/css/site.css" /> -->
     <!-- <link rel="stylesheet" href="../../../wwroot/css/site.css" /> -->
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3" style="background-color: #e3f2fd;" >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3 navbarBackground" >
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p class="oldFont" id="title">The Digital Curator</p></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -90,11 +99,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!-- <footer class="border-top footer text-muted layoutFooter">
         <div class="container">
             &copy; 2019 - The Digital Curator - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> -->
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

@@ -26,7 +26,11 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: none;
+}
+
+.layoutFooter{
+  max-height: 15px;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
@@ -58,8 +62,8 @@ body {
   width: 100%;
   white-space: nowrap;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  height: 15px;
+  line-height: 15px; /* Vertically center the text there */
 }
 
 .oldFont{
@@ -177,6 +181,11 @@ body {
   font-family: "IBM Plex Mono", italic;
 }
 
+.plexMonoBold{
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+}
+
 .hideThis{
   display: none;
   visibility: hidden;
@@ -255,14 +264,19 @@ table {
   min-width: 18%;
 } */
 
+.messageMargin{
+  margin-bottom: 10px;
+}
+
 .postIndexContainer{
   width:100%;
-  padding:0px 40px;
+  padding:15px 60px;
 }
 
 .postContainer{
   width:100%;
   padding:20px 40px;
+  margin-bottom:10px;
 }
 
 .rowPostContent{
@@ -282,6 +296,14 @@ table {
   /* display: flex; justify-content: flex-start; */
 }
 
+.alignLeftLogin{
+  /* float: center;*/
+  width: 53%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto
+}
+
 .alignCenter{
   /* float: center;*/
   width: 33%;
@@ -289,7 +311,6 @@ table {
   margin-left: auto;
   margin-right: auto
 }
-
 
 .alignRight{
   /* display: flex; justify-content: flex-end */
@@ -315,13 +336,58 @@ a:link{
   font-stretch: semi-expanded;
 }
 
-.indexMessagesLinks{
-  display:inline-block;
+a:hover{
+  color: #800000;
 }
 
-.borderLink{
-  border: 1px tan;
-  border-radius: 3px;
+.inline{
+  display:inline-block;
+  width:100%;
+}
+
+.plainLink{
+  font-stretch: normal !important;
+  background-color: none !important;
+  border: none !important;
+  padding:0px !important;
+  margin:0px !important;
+}
+
+.pmLinks{
+  background-color: beige;
+  border: 1px solid tan;
+  border-radius: 6px;
+  padding: 1px 4px;
+  margin: 2px 0px;
+}
+
+.navbarBackground{
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2980b9, #6DD5FA, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2980b9, #6DD5FA, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.landingBody{
+  /* background-image: url("~/image/paper.jpg") no-repeat center center fixed;  */
+  /* webkit-background-size: cover; 
+  moz-background-size: cover; 
+  o-background-size: cover;  */
+  /* background-size: cover;
+  opacity: 0.4; */
+
+  display: block;
+  position: absolute;
+  z-index: -1;   
+  width: 100%;
+  height: 100%;
+  background-image: url('../image/paper.jpg');
+  background-size: cover;
+  /* opacity: 0.7; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-attachment: scroll;
 }
 /*
 form {

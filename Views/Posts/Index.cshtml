@@ -8,7 +8,7 @@
     <h1>Index</h1>
 
     <p>
-        <a asp-action="Create">Create New</a>
+        <span class="pmLinks"><a asp-action="Create">Create New</a></span>
     </p>
 
     
@@ -83,9 +83,9 @@
                 </div>
 
                 <div class="alignRight">
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit|</a>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details|</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <span class="pmLinks"><a asp-action="Edit" asp-route-id="@item.Id">Edit|</a></span>
+                    <span class="pmLinks"><a asp-action="Details" asp-route-id="@item.Id">Details|</a></span>
+                    <span class="pmLinks"><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></span>
                 </div>
 
             </div>

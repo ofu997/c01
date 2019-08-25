@@ -2983,6 +2983,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Shared/_Landing.cshtml",
+      "TargetPath": "Views/Shared/_Landing.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
       "TargetPath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
       "FileKind": "mvc"
