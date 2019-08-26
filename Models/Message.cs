@@ -12,8 +12,10 @@ namespace MVCwithAuth.Models
     [Display(Name="")]
         public int Id { get; set; }
     [Display(Name="Author(s)")]
+    [Required(ErrorMessage="Author is required")]
         public string Author {get;set;}
     [Display(Name="Title of work")]
+    [Required(ErrorMessage="Title is required")]
         public string Title { get; set; }
         public string City {get;set;}
         public string Publisher {get;set;}

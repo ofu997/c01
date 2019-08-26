@@ -8,15 +8,9 @@
     <h1>Details</h1>
 
     <div>
-        <h4>Message</h4>
+        <!-- <h4>Message</h4> -->
         <hr />
-        <dl class="row itemsBackground itemsInContainer">
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Id)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Id)
-            </dd>        
+        <dl class="row containerForPagesExceptIndex itemsBackground ">    
             <dt class = "col-sm-2">
                 @Html.DisplayNameFor(model => model.Author)
             </dt>
@@ -74,7 +68,7 @@
         </dl>
     </div>
     <div>
-        <span class="pmLinks"><a asp-action="Edit" asp-route-id="@Model.Id">Edit</a></span>|
+        <span class="pmLinks"><a asp-action="Edit" asp-route-id="@Model.Id">Edit</a></span>
         <span class="pmLinks"><a asp-action="Index">Back to List</a></span>
     </div>
 </div>

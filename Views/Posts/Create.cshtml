@@ -5,11 +5,10 @@
         ViewData["Title"] = "Create";
     }
 
-    <h1>Create</h1>
+    <h1>Create post</h1>
 
-    <h4>Post</h4>
     <hr />
-    <div class="container postContainer itemsBackground">
+    <div class="container containerForPagesExceptIndex itemsBackground">
         <div class="row">
             <div class="col-md-8">
                 <form asp-action="Create" >
@@ -23,8 +22,7 @@
 
                     <div class="form-group">
                         <label asp-for="Content" class="control-label"></label>
-                        <!-- extra / in opening textarea -->
-                        <textarea rows="20" cols="150" wrap="hard" asp-for="Content" class="form-control" ></textarea>
+                        <textarea rows="20" cols="150" wrap="hard" asp-for="Content" class="form-control"></textarea>
                         <span asp-validation-for="Content" class="text-danger"></span>
                     </div>
 

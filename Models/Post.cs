@@ -13,7 +13,9 @@ namespace MVCwithAuth.Models
     {
             public int Id { get; set; }
             // public string OwnerId {get;set;}
-            public string Title { get; set; }
+        [Required(ErrorMessage="Title is required")]
+        public string Title { get; set; }
+            [Required(ErrorMessage="Content is required")]
             public string Content { get; set; }
             
         [DataType(DataType.Date)]

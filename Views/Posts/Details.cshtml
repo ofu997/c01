@@ -8,9 +8,9 @@
     <h1>Details</h1>
 
     <div>
-        <h4>Post</h4>
+        <!-- <h4>Post</h4> -->
         <hr />
-        <div class="container postContainer itemsBackground">        
+        <div class="container containerForPagesExceptIndex itemsBackground">        
             <dl class="row">
                 <dt class = "col-sm-2">
                     @Html.DisplayNameFor(model => model.Title)
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <span class="pmLinks"><a asp-action="Edit" asp-route-id="@Model.Id">Edit|</a></span>
+    <span class="pmLinks"><a asp-action="Edit" asp-route-id="@Model.Id">Edit</a></span>
     <span class="pmLinks"><a asp-action="Index">Back to List</a></span>
     
 </div>

@@ -5,58 +5,15 @@
         ViewData["Title"] = "Index";
     }
 
+    <h2>
+        @ViewData["Message"]
+    </h2>
+
     <h1>Index</h1>
 
     <p>
         <span class="pmLinks"><a asp-action="Create">Create New</a></span>
     </p>
-
-    
-    <!-- <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.Content)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.TimeStamp)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.userEmail)
-                </th>            
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
-                </td>
-                <td>
-                    @item.TimeStamp
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.userEmail)
-                </td>            
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table> -->
 
     @foreach(var item in Model){
         <div class="container postIndexContainer itemsBackground">
@@ -67,7 +24,7 @@
                 </span>
             </div>
 
-            <div class="row rowPostContent">
+            <div class="row width100">
                 @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
             </div>
 
@@ -83,8 +40,8 @@
                 </div>
 
                 <div class="alignRight">
-                    <span class="pmLinks"><a asp-action="Edit" asp-route-id="@item.Id">Edit|</a></span>
-                    <span class="pmLinks"><a asp-action="Details" asp-route-id="@item.Id">Details|</a></span>
+                    <span class="pmLinks"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></span>
+                    <span class="pmLinks"><a asp-action="Details" asp-route-id="@item.Id">Details</a></span>
                     <span class="pmLinks"><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></span>
                 </div>
 
