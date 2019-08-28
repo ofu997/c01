@@ -171,7 +171,7 @@ body {
 
     /* recent comment */
     blink-caret 6s;
-  animation-delay: 9s;
+  animation-delay: 8s;
 }
 
 .typeBG{
@@ -423,6 +423,9 @@ a:hover{
 
 .layoutBody{
   background-color: #fefdf7;
+  /* background-color: #000000; */
+  /* background-color: #fcf9e6; */
+  /* background-color: #ffffff; */
 }
 /*
 form {

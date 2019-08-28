@@ -32,7 +32,15 @@ namespace MVCwithAuth.Controllers
                 select m;
             if (!String.IsNullOrEmpty(searchString))
             {
-                messages = messages.Where(s => s.Title.Contains(searchString));
+                messages = messages.Where(
+                    s => s.Author.Contains(searchString)
+                    ||s.Title.Contains(searchString)
+                    ||s.City.Contains(searchString)
+                    ||s.Publisher.Contains(searchString)
+                    ||s.Year.Contains(searchString)
+                    ||s.Tags.Contains(searchString)
+                    ||s.Content.Contains(searchString)
+                );
             }
 
             if (currentUser == null) 
