@@ -1,4 +1,4 @@
-# Digital Archivist 
+# The Digital Curator
 ## a combined blog and bibliography catalog
 
 #### Things I learned making this:
