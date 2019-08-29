@@ -2,14 +2,14 @@
 ## a combined blog and bibliography catalog
 
 #### Things I learned making this:
-*Making an MVC project with multiple context databases.<br/>
-*Using the Identity package for authentication and authorization.<br/>
-*Enhancing my CSS styling and animation skills.
+* Making an MVC project with multiple context databases.<br/>
+* Using the Identity package for authentication and authorization.<br/>
+* Enhancing my CSS styling and animation skills.
 
 #### How to use this app
-*Anyone can see blog posts (/Posts/Index) and bibliography information (Archives/Index).<br/>
-*A signed-in user can edit and delete their posts and archives.<br/>
-*An admin can edit and delete any post or archive.
+* Anyone can see blog posts (/Posts/Index) and bibliography information (Archives/Index).<br/>
+* A signed-in user can edit and delete their posts and archives.<br/>
+* An admin can edit and delete any post or archive.
 
 #### Images
 
