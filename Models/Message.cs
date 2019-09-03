@@ -9,30 +9,30 @@ namespace MVCwithAuth.Models
 {
     public class Message
     {
-    [Display(Name="")]
-        public int Id { get; set; }
-    [Display(Name="Author(s)")]
-    [Required(ErrorMessage="Author is required")]
-        public string Author {get;set;}
-    [Display(Name="Title of work")]
-    [Required(ErrorMessage="Title is required")]
-        public string Title { get; set; }
-        public string City {get;set;}
-        public string Publisher {get;set;}
-        public string Year {get;set;}
-    [Display(Name = "Hashtags")]
-        public string Tags { get; set; }
-    [Display(Name="Description")]
-        public string Content { get; set; }
-    [DataType(DataType.Date)]
-    [Display(Name = "Created at:")]
-    [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
-        public DateTime TimeStamp { get; set; } 
-    [Display(Name="Contact")]
-        public string userEmail {get;set;}
-            public Message()
-            {
-                TimeStamp = DateTime.Now;
-            }
+        [Display(Name="")]
+            public int Id { get; set; }
+        [Display(Name="Author(s)")]
+        [Required(ErrorMessage="Author is required")]
+            public string Author {get;set;}
+        [Display(Name="Title of work")]
+        [Required(ErrorMessage="Title is required")]
+            public string Title { get; set; }
+            public string City {get;set;}
+            public string Publisher {get;set;}
+            public string Year {get;set;}
+        [Display(Name = "Hashtags")]
+            public string Tags { get; set; }
+        [Display(Name="Description")]
+            public string Content { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Created at:")]
+        [DisplayFormat(DataFormatString = "{MM/dd/yyyy h:mm tt}")]
+            public DateTime TimeStamp { get; set; } 
+        [Display(Name="Contact")]
+            public string userEmail {get;set;}
+                public Message()
+                {
+                    TimeStamp = DateTime.Now;
+                }
     }
 }
