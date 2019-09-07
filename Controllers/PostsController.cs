@@ -32,10 +32,9 @@ namespace MVCwithAuth.Controllers
             if (currentUser == null) 
             {
                 ViewData["Message"] = "Anonymous viewing";
-                return View(await _context.Post.ToListAsync());
             }
                 Console.WriteLine("there is a user");            
-            return View(await _context.Post.ToListAsync());
+            return View(await _context.Post.OrderByDescending(x => x.TimeStamp).ToListAsync());
         }
 
         // GET: Posts/Details/5
