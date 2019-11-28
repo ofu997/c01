@@ -17,7 +17,7 @@ namespace MVCwithAuth.Controllers
     {
         private readonly MVCwithAuthContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        public List<String> AdminEmails = new List<String>{"nellstrand@luc.edu", "nathanellstrand@gmail.com", "ofu997@gmail.com"};
+        public List<String> AdminEmails = new List<String>{"nellstrand@luc.edu", "nathanellstrand@gmail.com", "ofu997@gmail.com", "fu.serena@gmail.com "};
         public PostsController(MVCwithAuthContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;

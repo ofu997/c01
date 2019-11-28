@@ -2956,158 +2956,158 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 703
   },
   "RootNamespace": "MVCwithAuth",
   "Documents": [
     {
-      "FilePath": "Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/_ViewStart.cshtml",
-      "TargetPath": "Views/_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Home/Index.cshtml",
-      "TargetPath": "Views/Home/Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Home/Privacy.cshtml",
-      "TargetPath": "Views/Home/Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/Account/Register.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/_ViewImports.cshtml",
-      "TargetPath": "Views/_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Posts/Details.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Posts/Details.cshtml",
       "TargetPath": "Views/Posts/Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Shared/_Landing.cshtml",
-      "TargetPath": "Views/Shared/_Landing.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Messages/Details.cshtml",
-      "TargetPath": "Views/Messages/Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Posts/Create.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Posts/Create.cshtml",
       "TargetPath": "Views/Posts/Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/_ViewStart.cshtml",
+      "TargetPath": "Views/_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Posts/Delete.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Posts/Delete.cshtml",
       "TargetPath": "Views/Posts/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Messages/Index.cshtml",
-      "TargetPath": "Views/Messages/Index.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Messages/Details.cshtml",
+      "TargetPath": "Views/Messages/Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Areas/Identity/Pages/_ViewImports.cshtml",
-      "TargetPath": "Areas/Identity/Pages/_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/Error.cshtml",
-      "TargetPath": "Views/Shared/Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/Account/Logout.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/Logout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/Account/Manage/Index.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/Manage/Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/_ViewStart.cshtml",
-      "TargetPath": "Areas/Identity/Pages/_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Areas/Identity/Pages/Account/Login.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Messages/Create.cshtml",
-      "TargetPath": "Views/Messages/Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Views/Shared/_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Messages/Delete.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Messages/Delete.cshtml",
       "TargetPath": "Views/Messages/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Areas/Identity/Pages/Account/_ViewImports.cshtml",
-      "TargetPath": "Areas/Identity/Pages/Account/_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/_CookieConsentPartial.cshtml",
-      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Posts/Index.cshtml",
-      "TargetPath": "Views/Posts/Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/_Layout.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views/Shared/_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Messages/Edit.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views/Home/Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Views/Shared/_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewStart.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/Error.cshtml",
+      "TargetPath": "Views/Shared/Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Posts/Edit.cshtml",
+      "TargetPath": "Views/Posts/Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/_CookieConsentPartial.cshtml",
+      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/Logout.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/Manage/Index.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Manage/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Messages/Index.cshtml",
+      "TargetPath": "Views/Messages/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Messages/Create.cshtml",
+      "TargetPath": "Views/Messages/Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Home/Index.cshtml",
+      "TargetPath": "Views/Home/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Posts/Index.cshtml",
+      "TargetPath": "Views/Posts/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewImports.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/_ViewImports.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Messages/Edit.cshtml",
       "TargetPath": "Views/Messages/Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Posts/Edit.cshtml",
-      "TargetPath": "Views/Posts/Edit.cshtml",
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/Login.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/_Landing.cshtml",
+      "TargetPath": "Views/Shared/_Landing.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/_ViewImports.cshtml",
+      "TargetPath": "Views/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/Account/Register.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     }
   ],
