@@ -1,17 +1,21 @@
 @model MVCwithAuth.Models.Post
 
+@{
+    Layout = "_Post";
+}
+
 <div class="plexSerif">
     @{
         ViewData["Title"] = "Delete";
     }
 
-    <h1>Delete</h1>
+    <h1 class="postHeadingFont">Delete</h1>
 
-    <h3>Are you sure you want to delete @Html.DisplayFor(model => model.Title)?</h3>
+    <h3 class="postHeadingFont">Are you sure you want to delete @Html.DisplayFor(model => model.Title)?</h3>
     <div>
         <!-- <h4>Post</h4> -->
         <hr />
-        <div class="container containerForPagesExceptIndex itemsBackground">
+        <div class="container containerForPagesExceptIndex postItemsBackground postFont">
             <dl class="row">
                 <dt class = "col-sm-2">
                     @Html.DisplayNameFor(model => model.Title)

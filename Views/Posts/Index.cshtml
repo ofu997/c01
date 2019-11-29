@@ -1,22 +1,26 @@
 @model IEnumerable<MVCwithAuth.Models.Post>
 
+@{
+    Layout = "_Post";
+}
+
 <span class="plexSerif">
     @{
         ViewData["Title"] = "Index";
     }
 
-    <h2>
+    <h2 class="postHeadingFont">
         @ViewData["Message"]
     </h2>
 
-    <h1>Index</h1>
+    <h1 class="postHeadingFont">Index</h1>
 
     <p>
         <span class="pmLinks"><a asp-action="Create">Create New</a></span>
     </p>
 
     @foreach(var item in Model){
-        <div class="container postIndexContainer itemsBackground">
+        <div class="container postIndexContainer postItemsBackground postFont">
 
             <div class="row">
                 <span class="postTitle">

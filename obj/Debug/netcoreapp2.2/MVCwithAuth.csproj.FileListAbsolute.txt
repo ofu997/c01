@@ -51,3 +51,4 @@
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Posts/Index.g.cshtml.cs
 /home/oliver/Documents/projects/MVCwithAuth/bin/Debug/netcoreapp2.2/app.db
 /home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_Landing.g.cshtml.cs
+/home/oliver/Documents/projects/MVCwithAuth/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_Post.g.cshtml.cs

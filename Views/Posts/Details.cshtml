@@ -1,16 +1,19 @@
 @model MVCwithAuth.Models.Post
 
+@{
+    Layout = "_Post";
+}
+
 <div class="plexSerif">
     @{
         ViewData["Title"] = "Details";
     }
 
-    <h1>Details</h1>
+    <h1 class="postHeadingFont">Details</h1>
 
     <div>
-        <!-- <h4>Post</h4> -->
         <hr />
-        <div class="container containerForPagesExceptIndex itemsBackground">        
+        <div class="container containerForPagesExceptIndex postItemsBackground postFont">        
             <dl class="row">
                 <dt class = "col-sm-2">
                     @Html.DisplayNameFor(model => model.Title)

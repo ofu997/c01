@@ -235,6 +235,18 @@ textarea{
   background: #fbf5ba;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #Fbf5ba, #Fefdf6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #Fbf5ba, #Fefdf6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+    
+  border-radius: 20px;
+  width: 100%;
+}
+
+.postItemsBackground{
+  /* padding: 20% 20%; */
+  /* background: #F4F1E9; lightgrey*/
+  /* background: #fbf5dc; tan color*/
+  background: #fbf5ba;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0d648c, #2d274f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(180deg,transparent,#1b2530),linear-gradient(90deg,#0d648c,#2d274f);
   
   border-radius: 20px;
   width: 100%;
@@ -278,6 +290,16 @@ table {
   width:100%;
   padding:20px 40px;
   margin-bottom:10px;
+}
+
+.postFont{
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.postHeadingFont{
+  color: #Fbf5ba;
+  font-family: 'Roboto', sans-serif;
 }
 
 .width100{
@@ -427,6 +449,12 @@ a:hover{
   /* background-color: #fcf9e6; */
   /* background-color: #ffffff; */
 }
+
+.postBody{
+  /* background-color: #0f171e; */
+  background-color:   #201d34;
+}
+
 /*
 form {
   width: 100%;

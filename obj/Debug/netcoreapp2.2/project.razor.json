@@ -3061,6 +3061,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Views/Shared/_Post.cshtml",
+      "TargetPath": "Views/Shared/_Post.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/oliver/Documents/projects/MVCwithAuth/Areas/Identity/Pages/_ViewImports.cshtml",
       "TargetPath": "Areas/Identity/Pages/_ViewImports.cshtml",
       "FileKind": "mvc"

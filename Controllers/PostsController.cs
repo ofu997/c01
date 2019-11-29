@@ -38,6 +38,7 @@ namespace MVCwithAuth.Controllers
         }
 
         // GET: Posts/Details/5
+        // [Route("Posts/[action]/[Title]")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

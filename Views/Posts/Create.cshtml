@@ -1,14 +1,18 @@
 @model MVCwithAuth.Models.Post
 
+@{
+    Layout = "_Post";
+}
+
 <div class="plexSerif">
     @{
         ViewData["Title"] = "Create";
     }
 
-    <h1>Create post</h1>
+    <h1 class="postHeadingFont">Create post</h1>
 
     <hr />
-    <div class="container containerForPagesExceptIndex itemsBackground">
+    <div class="container containerForPagesExceptIndex postItemsBackground postFont">
         <div class="row">
             <div class="col-md-8">
                 <form asp-action="Create" >
