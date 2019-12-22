@@ -25,7 +25,8 @@
                     @Html.DisplayNameFor(model => model.Content)
                 </dt>
                 <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.Content)
+                    <!-- @Html.DisplayFor(model => model.Content) -->
+                    @Html.Raw(@Model.Content.Replace(Environment.NewLine, "<br/>"))
                 </dd>
                 <dt class = "col-sm-2">
                     @Html.DisplayNameFor(model => model.TimeStamp)
