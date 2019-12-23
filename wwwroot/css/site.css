@@ -470,3 +470,9 @@ font-family: 'IBM Plex Sans Condensed', sans-serif;
 font-family: 'IBM Plex Serif', serif;
 font-family: 'IBM Plex Mono', monospace; 
 */
+
+.postLinks{
+  font-family:arial !important;
+  width:100% !important;
+  color:rgb(255, 187, 0) !important;
+}
