@@ -1,22 +1,29 @@
 @model IEnumerable<MVCwithAuth.Models.Message>
 
-<div class="plexSerif">
-    @{
-        ViewData["Title"] = "IndexViewData";
-    }
+@{
+    Layout = "_Post";
+}    
 
-    <h2>
+<div class="plexSerif">
+
+    <span class="postHeadingFont">
+        @{
+            ViewData["Title"] = "IndexViewData";
+        }
+    </span>
+
+    <h2 class="postHeadingFont">
         @ViewData["Message"]
     </h2>
     
-    <h1>Index</h1>
+    <h1 class="postHeadingFont">Index</h1>
 
 
     <p>
         <span class="pmLinks"><a asp-action="Create">Create New</a></span>
     </p>
 
-    <form asp-controller="Messages" asp-action="Index" method="get">
+    <form asp-controller="Messages" asp-action="Index" method="get" class="postHeadingFont">
         <p>
             Hashtag or search term: <input type="text" name="searchString">
             <input type="submit" value="Filter" />
@@ -27,9 +34,9 @@
     </div>
 
     <div class="container-fluid">
-        <div class="itemsBackground">
+        <div /*class="itemsBackground"*/>
         
-                    <table class="table ">
+                    <table class="table postItemsBackground postFont">
                         <thead>
                             <tr>
                                 <th id="thmid">

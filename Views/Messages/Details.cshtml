@@ -1,16 +1,21 @@
 @model MVCwithAuth.Models.Message
 
+@{
+    Layout = "_Post";
+}
+
 <div class="plexSerif">
+    @* this doesn't display *@
     @{
         ViewData["Title"] = "Details";
     }
 
-    <h1>Details</h1>
+    <h1 class="postHeadingFont">Details</h1>
 
     <div>
         <!-- <h4>Message</h4> -->
         <hr />
-        <dl class="row containerForPagesExceptIndex itemsBackground ">    
+        <dl class="row containerForPagesExceptIndex postItemsBackground postFont">    
             <dt class = "col-sm-2">
                 @Html.DisplayNameFor(model => model.Author)
             </dt>
