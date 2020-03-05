@@ -207,7 +207,8 @@ body {
 }
 
 textarea{
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
+  white-space: normal; 
 }
 
 .postTitle{
@@ -480,4 +481,9 @@ font-family: 'IBM Plex Mono', monospace;
 .italic {
   font-style: italic;
   font-weight: 300;
+}
+
+iframe {
+  float: left;
+  max-width: 50%;
 }

@@ -30,7 +30,9 @@
             </div>
 
             <div class="row width100">
-                @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>"))
+                @* @Html.Raw(item.Content.Replace(Environment.NewLine, "<br/>")) *@
+                @Html.Raw(item.Content)
+                @* @Html.DisplayFor(modelItem => item.Content) *@
             </div>
 
             <div class="row postTimeAndLinks">
